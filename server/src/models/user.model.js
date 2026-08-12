@@ -13,17 +13,16 @@ const userSchema = new mongoose.Schema({
     credits: {
         type: Number,
         default: 50,
-        default: true
     },
     isCreditAvailiable: {
         type: Boolean,
         default: true
     },
-    notes: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Notes",
-        default: []
-    }
+    // notes: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Notes",
+    //     default: []
+    // }
 }, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
