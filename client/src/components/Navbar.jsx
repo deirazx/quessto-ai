@@ -155,7 +155,7 @@ const Navbar = () => {
                                                     <p className="text-xs truncate text-gray-400">{user?.email}</p>
                                                 </div>
                                                 <div className="py-1">
-                                                    <Link to="/#" onClick={() => setDropdownOpen(false)} className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 hover:bg-white/5 transition-colors">
+                                                    <Link to="/my-notes" onClick={() => setDropdownOpen(false)} className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 hover:bg-white/5 transition-colors">
                                                         📁 My Notes
                                                     </Link>
                                                     <Link to="/#" onClick={() => setDropdownOpen(false)} className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 hover:bg-white/5 transition-colors">

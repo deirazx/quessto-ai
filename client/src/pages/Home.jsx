@@ -1,10 +1,22 @@
 import React from 'react'
 import { motion } from 'motion/react'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import img1 from '../assets/img1.png'
 
 const Home = () => {
+    const { user } = useSelector((state) => state.auth);
+    const navigate = useNavigate();
+
+    const handleStartGenerating = () => {
+        if (!user) {
+            navigate('/auth');
+        } else {
+            navigate('/generate');
+        }
+    };
     return (
         <div className="relative min-h-screen overflow-hidden bg-white text-black flex flex-col">
             {/* Background Ambient Glows */}
@@ -43,6 +55,7 @@ const Home = () => {
                         {/* Dual Action Buttons */}
                         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                             <motion.button
+                                onClick={handleStartGenerating}
                                 whileHover={{
                                     scale: 1.04,
                                     boxShadow: "0 20px 40px rgba(99, 102, 241, 0.15)"

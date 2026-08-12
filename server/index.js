@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 })
 
 app.use('/api/auth', require("./src/routes/auth.route"))
+app.use('/api/notes', require("./src/routes/notes.route"))
 
 ConnectDB().then(() => {
     app.listen(PORT, () => {
